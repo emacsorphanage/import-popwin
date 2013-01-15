@@ -7,10 +7,10 @@ We often fix import statements in any languages. `import-popwin.el` helps you in
 
 ## Screenshot
 
-### import-popwin in ruby-mode
+### import-popwin with ruby-mode
 ![import-popwin-ruby](https://github.com/syohex/emacs-import-popwin/raw/master/image/import-popwin-ruby.png)
 
-### import-popwin cperl-mode
+### import-popwin with cperl-mode
 ![import-popwin-perl](https://github.com/syohex/emacs-import-popwin/raw/master/image/import-popwin-perl.png)
 
 
