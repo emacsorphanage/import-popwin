@@ -31,6 +31,10 @@ Pop up buffer near by import statements
 
 * c-mode
 * c++-mode
+* perl-mode, cperl-mode
+* ruby-mode
+* python-mode
+* emacs-lisp-mode
 
 
 ## Add own configuration
