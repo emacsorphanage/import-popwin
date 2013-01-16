@@ -46,8 +46,6 @@
   :group 'import-popwin)
 
 (defvar import-popwin:info nil)
-(defvar import-popwin:info-properties
-  '(:before :regexp :after :fallback))
 
 (defun import-popwin:match-mode (mode modes)
   (cond ((listp modes) (member mode modes))
@@ -97,19 +95,25 @@
   (setcar oldinfo mode)
   (setcdr oldinfo params))
 
+(defun import-popwin:validate-parameters (plist)
+  (loop for prop in '(:mode :regexp)
+        unless (plist-get plist prop)
+        do
+        (error (format "missing mandatory parameter '%s'" prop))))
+
+(defun import-popwin:collect-info-properties (plist)
+  (loop for prop in '(:before :regexp :after :fallback)
+        append (list prop (plist-get plist prop))))
+
 (defun import-popwin:add (&rest plist)
-  (let ((mode (plist-get plist :mode))
-        (params (loop for prop in import-popwin:info-properties
-                      append (list prop (plist-get plist prop)))))
-    (unless mode
-      (error "missing :mode parameter"))
-    (let* ((mode-list (if (listp mode)
-                          mode
-                        (list mode)))
-           (registered-info (import-popwin:registered-info-p mode-list)))
-      (if registered-info
-          (import-popwin:override-info mode-list params registered-info)
-        (push (cons mode-list params) import-popwin:info)))))
+  (import-popwin:validate-parameters plist)
+  (let* ((mode (plist-get plist :mode))
+         (params (import-popwin:collect-info-properties plist))
+         (mode-list (or (and (listp mode) mode) (list mode)))
+         (registered-info (import-popwin:registered-info-p mode-list)))
+    (if registered-info
+        (import-popwin:override-info mode-list params registered-info)
+      (push (cons mode-list params) import-popwin:info))))
 
 ;; configuration
 (import-popwin:add :mode '(c-mode c++-mode)
