@@ -17,7 +17,7 @@ We often fix import statements in any languages. `import-popwin.el` helps you in
 ## Requirements
 
 * Emacs 24 or higher
-* [popwin.el](https://github.com/m2ym/popwin-el) 0.6
+* [popwin.el](https://github.com/m2ym/popwin-el) 0.6 or higher
 
 
 ## Basic Usage
@@ -43,3 +43,36 @@ Pop up buffer near by import statements
 (import-popwin:add :mode 'java-mode
                    :regexp "^import\\s-")
 ````
+
+You can override default setting.
+
+```` elisp
+(import-popwin:add :mode '(perl-mode cperl-mode)
+                   :regexp "^\\(use\\|require\\)-")
+````
+
+## Configuration Parameters
+
+### Mandatory Parameter
+
+:mode
+
+    Specified mode for this configuration.
+
+:regexp
+
+    Regexp for searching import statement.
+
+Optional Parameter
+
+:before
+
+    Function which is called before popup buffer.
+
+:fallback
+
+    Function which is called if to search import statement with `:regexp` is failed.
+
+:after
+
+    Function which is called after popup buffer.
