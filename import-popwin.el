@@ -47,6 +47,21 @@
 
 (defvar import-popwin:info nil)
 
+(defvar import-popwin:common-before-hook nil
+  "common hook before popup window")
+
+(defvar import-popwin:common-after-hook nil
+  "common hook after popup window")
+
+(defmacro import-popwin:run-hooks-with-save-excursion (hook)
+  `(save-excursion
+     (run-hooks ,hook)))
+
+(defmacro import-popwin:funcall-with-save-excursion (func)
+  `(when ,func
+     (save-excursion
+       (funcall ,func))))
+
 (defun import-popwin:match-mode (mode modes)
   (cond ((listp modes) (member mode modes))
         (t (eq mode modes))))
@@ -66,23 +81,21 @@
           (fallback-func (plist-get info :fallback))
           (after-func (plist-get info :after))
           (regexp (plist-get info :regexp)))
-      (when before-func
-        (save-excursion
-          (funcall before-func)))
+      (import-popwin:run-hooks-with-save-excursion
+       'import-popwin:common-before-hook)
+      (import-popwin:funcall-with-save-excursion before-func)
       (popwin:popup-buffer (current-buffer)
                            :height import-popwin:height
                            :position import-popwin:position)
       (goto-char (line-end-position))
       (or (re-search-backward regexp nil t)
-          (and fallback-func
-               (save-excursion
-                 (funcall fallback-func)))
+          (import-popwin:funcall-with-save-excursion fallback-func)
           (goto-char (point-min)))
       (forward-line 1)
       (recenter)
-      (when after-func
-        (save-excursion
-          (funcall after-func))))))
+      (import-popwin:run-hooks-with-save-excursion
+       'import-popwin:common-after-hook)
+      (import-popwin:funcall-with-save-excursion after-func))))
 
 (defun import-popwin:registered-info-p (mode-list)
   (loop for mode in mode-list
@@ -115,7 +128,7 @@
         (import-popwin:override-info mode-list params registered-info)
       (push (cons mode-list params) import-popwin:info))))
 
-;; configuration
+;; Default configuration
 (import-popwin:add :mode '(c-mode c++-mode)
                    :regexp "^#include")
 
