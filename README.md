@@ -76,3 +76,14 @@ Optional Parameter
 :after
 
     Function which is called after popup buffer.
+
+
+## Hooks
+
+import-popwin:common-before-hook
+
+    Common hooks called before popup window
+
+import-popwin:common-after
+
+    Common hooks called after popup window
