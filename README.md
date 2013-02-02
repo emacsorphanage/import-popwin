@@ -82,8 +82,10 @@ Optional Parameter
 
 import-popwin:common-before-hook
 
-    Common hooks called before popup window
+    Common hooks called before popup window.
+    This hook is run before each language `:before` functon
 
 import-popwin:common-after
 
     Common hooks called after popup window
+    This hook is run before each language `:after` functon
