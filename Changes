@@ -1,4 +1,7 @@
 Revision history for import-popwin.el
 
-Revision 0.1  2013/02/03 syohex
+Revision 0.02  2013/03/18 syohex
+  - add autoload cookie
+
+Revision 0.01  2013/02/03 syohex
   - Initial version

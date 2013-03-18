@@ -4,7 +4,7 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-import-popwin
-;; Version: 0.01
+;; Version: 0.02
 ;; Package-Requires: ((popwin "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -72,6 +72,7 @@
         when (import-popwin:match-mode mode modes)
         return (cdr info)))
 
+;;;###autoload
 (defun import-popwin ()
   (interactive)
   (let ((info (import-popwin:find-info major-mode)))
