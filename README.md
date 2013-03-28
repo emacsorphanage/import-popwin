@@ -27,7 +27,7 @@ Pop up buffer near by import statements
     M-x import-popwin
 
 
-## Default support mode
+## Default support modes
 
 * c-mode
 * c++-mode
@@ -39,53 +39,53 @@ Pop up buffer near by import statements
 
 ## Add own configuration
 
-```` elisp
+```elisp
 (import-popwin:add :mode 'java-mode
                    :regexp "^import\\s-")
-````
+```
 
 You can override default setting.
 
-```` elisp
+```elisp
 (import-popwin:add :mode '(perl-mode cperl-mode)
                    :regexp "^\\(use\\|require\\)-")
-````
+```
 
 ## Configuration Parameters
 
 ### Mandatory Parameter
 
-:mode
+#### :mode
 
-    Specified mode for this configuration.
+Specified mode for this configuration.
 
-:regexp
+#### :regexp
 
-    Regexp for searching import statement.
+Regexp for searching import statement.
 
 Optional Parameter
 
-:before
+#### :before
 
-    Function which is called before popup buffer.
+Function which is called before popup buffer.
 
-:fallback
+#### :fallback
 
-    Function which is called if to search import statement with `:regexp` is failed.
+Function which is called if to search import statement with `:regexp` is failed.
 
-:after
+#### :after
 
-    Function which is called after popup buffer.
+Function which is called after popup buffer.
 
 
 ## Hooks
 
-import-popwin:common-before-hook
+#### import-popwin:common-before-hook
 
-    Common hooks called before popup window.
-    This hook is run before each language `:before` functon
+Common hooks called before popup window.
+This hook is run before each language `:before` functon
 
-import-popwin:common-after
+#### import-popwin:common-after
 
-    Common hooks called after popup window
-    This hook is run before each language `:after` functon
+Common hooks called after popup window
+This hook is run before each language `:after` functon
