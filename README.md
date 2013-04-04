@@ -57,7 +57,7 @@ You can override default setting.
 
 ### Mandatory Parameter
 
-#### :mode
+#### `:mode`
 
 Specified mode for this configuration.
 
