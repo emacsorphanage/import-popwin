@@ -8,10 +8,10 @@ We often fix import statements in any languages. `import-popwin.el` helps you in
 ## Screenshot
 
 ### import-popwin with ruby-mode
-![import-popwin-ruby](https://github.com/syohex/emacs-import-popwin/raw/master/image/import-popwin-ruby.png)
+![import-popwin-ruby](image/import-popwin-ruby.png)
 
 ### import-popwin with cperl-mode
-![import-popwin-perl](https://github.com/syohex/emacs-import-popwin/raw/master/image/import-popwin-perl.png)
+![import-popwin-perl](image/import-popwin-perl.png)
 
 
 ## Requirements
@@ -22,9 +22,9 @@ We often fix import statements in any languages. `import-popwin.el` helps you in
 
 ## Basic Usage
 
-Pop up buffer near by import statements
+#### `import-popwin`
 
-    M-x import-popwin
+Pop up buffer near by import statements
 
 
 ## Default support modes
@@ -59,33 +59,33 @@ You can override default setting.
 
 Specified mode for this configuration.
 
-#### :regexp
+#### `:regexp`
 
 Regexp for searching import statement.
 
 Optional Parameter
 
-#### :before
+#### `:before`
 
 Function which is called before popup buffer.
 
-#### :fallback
+#### `:fallback`
 
 Function which is called if to search import statement with `:regexp` is failed.
 
-#### :after
+#### `:after`
 
 Function which is called after popup buffer.
 
 
 ## Hooks
 
-#### import-popwin:common-before-hook
+#### `import-popwin:common-before-hook`
 
 Common hooks called before popup window.
 This hook is run before each language `:before` functon
 
-#### import-popwin:common-after
+#### `import-popwin:common-after`
 
 Common hooks called after popup window
 This hook is run before each language `:after` functon
