@@ -1,5 +1,8 @@
 Revision history for import-popwin.el
 
+Revision 0.03  2013/04/04 syohex
+  - Support javascript and coffeescript
+
 Revision 0.02  2013/03/18 syohex
   - add autoload cookie
 
