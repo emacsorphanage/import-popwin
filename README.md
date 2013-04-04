@@ -16,7 +16,7 @@ We often fix import statements in any languages. `import-popwin.el` helps you in
 
 ## Requirements
 
-* Emacs 24 or higher
+* Emacs 23 or higher
 * [popwin.el](https://github.com/m2ym/popwin-el) 0.6 or higher
 
 
