@@ -145,6 +145,12 @@
 (import-popwin:add :mode 'emacs-lisp-mode
                    :regexp "^\\s-*(require\\s-+")
 
+(import-popwin:add :mode '(js-mode js2-mode javascript-mode)
+                   :regexp "=\\s-+require(")
+
+(import-popwin:add :mode 'coffee-mode
+                   :regexp "=\\s-+require\\s-*\\(?:['\"]\\|(\\)")
+
 (provide 'import-popwin)
 
 ;;; import-popwin.el ends here
