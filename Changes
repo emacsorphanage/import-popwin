@@ -1,5 +1,8 @@
 Revision history for import-popwin.el
 
+Revision 0.04  2013/06/18 syohex
+  - Support golang
+
 Revision 0.03  2013/04/04 syohex
   - Support javascript and coffeescript
 

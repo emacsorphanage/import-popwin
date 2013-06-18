@@ -4,7 +4,7 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-import-popwin
-;; Version: 0.03
+;; Version: 0.04
 ;; Package-Requires: ((popwin "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -150,6 +150,9 @@
 
 (import-popwin:add :mode 'coffee-mode
                    :regexp "=\\s-+require\\s-*\\(?:['\"]\\|(\\)")
+
+(import-popwin:add :mode 'go-mode
+                   :regexp "^import\\s-*")
 
 (provide 'import-popwin)
 

@@ -37,6 +37,7 @@ Pop up buffer near by import statements
 * emacs-lisp-mode
 * js-mode, js2-mode, javascript-mode
 * coffee-mode
+* go-mode
 
 
 ## Add own configuration
