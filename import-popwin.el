@@ -154,6 +154,9 @@
 (import-popwin:add :mode 'go-mode
                    :regexp "^import\\s-*")
 
+(import-popwin:add :mode 'haskell-mode
+                   :regexp "^import\\s-*")
+
 (provide 'import-popwin)
 
 ;;; import-popwin.el ends here
