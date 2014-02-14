@@ -138,16 +138,16 @@
                    :regexp "^require\\s-")
 
 (import-popwin:add :mode 'python-mode
-                   :regexp "^\\(import\\|from\\)\\s-+")
+                   :regexp "^\\(?:import\\|from\\)\\s-+")
 
 (import-popwin:add :mode 'emacs-lisp-mode
                    :regexp "^\\s-*(require\\s-+")
 
 (import-popwin:add :mode '(js-mode js2-mode javascript-mode)
-                   :regexp "=\\s-+require(")
+                   :regexp "=\\s-*require\\s-*(\\s-*")
 
 (import-popwin:add :mode 'coffee-mode
-                   :regexp "=\\s-+require\\s-*\\(?:['\"]\\|(\\)")
+                   :regexp "^\\S-*\\s-*=\\s-*require\\s-*\\(?:['\"]\\|(\\)")
 
 (import-popwin:add :mode 'go-mode
                    :regexp "^import\\s-*")
