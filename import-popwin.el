@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-import-popwin
 ;; Version: 0.05
-;; Package-Requires: ((popwin "0.6"))
+;; Package-Requires: ((popwin "0.6") (cl-lib "0.3"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,9 +26,7 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'cl))
-
+(require 'cl-lib)
 (require 'popwin)
 
 (defgroup import-popwin nil
@@ -67,10 +65,10 @@
         (t (eq mode modes))))
 
 (defun import-popwin:find-info (mode)
-  (loop for info in import-popwin:info
-        for modes = (car info)
-        when (import-popwin:match-mode mode modes)
-        return (cdr info)))
+  (cl-loop for info in import-popwin:info
+           for modes = (car info)
+           when (import-popwin:match-mode mode modes)
+           return (cdr info)))
 
 ;;;###autoload
 (defun import-popwin ()
@@ -99,25 +97,25 @@
       (import-popwin:funcall-with-save-excursion after-func))))
 
 (defun import-popwin:registered-info-p (mode-list)
-  (loop for mode in mode-list
-        when (loop for info in import-popwin:info
-                   when (import-popwin:match-mode mode (car info))
-                   return info)
-        return it))
+  (cl-loop for mode in mode-list
+           when (cl-loop for info in import-popwin:info
+                         when (import-popwin:match-mode mode (car info))
+                         return info)
+           return it))
 
 (defun import-popwin:override-info (mode params oldinfo)
   (setcar oldinfo mode)
   (setcdr oldinfo params))
 
 (defun import-popwin:validate-parameters (plist)
-  (loop for prop in '(:mode :regexp)
-        unless (plist-get plist prop)
-        do
-        (error (format "missing mandatory parameter '%s'" prop))))
+  (cl-loop for prop in '(:mode :regexp)
+           unless (plist-get plist prop)
+           do
+           (error "missing mandatory parameter '%s'" prop)))
 
 (defun import-popwin:collect-info-properties (plist)
-  (loop for prop in '(:before :regexp :after :fallback)
-        append (list prop (plist-get plist prop))))
+  (cl-loop for prop in '(:before :regexp :after :fallback)
+           append (list prop (plist-get plist prop))))
 
 (defun import-popwin:add (&rest plist)
   (import-popwin:validate-parameters plist)
