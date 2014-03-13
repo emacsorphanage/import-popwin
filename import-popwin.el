@@ -131,6 +131,9 @@
 (import-popwin:add :mode '(c-mode c++-mode)
                    :regexp "^#include")
 
+(import-popwin:add :mode 'java-mode
+                   :regexp "^import")
+
 (import-popwin:add :mode '(cperl-mode perl-mode)
                    :regexp "^\\s-*use\\s-*[^;]+;")
 
