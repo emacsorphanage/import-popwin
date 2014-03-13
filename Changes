@@ -1,5 +1,9 @@
 Revision history for import-popwin.el
 
+Revision 0.07  2014/03/13 syohex
+  - Support java-mode
+  - Update requirements cl-lib version
+
 Revision 0.06  2014/02/14 syohex
   - Improve regular expression
   - use cl-lib instead of cl
