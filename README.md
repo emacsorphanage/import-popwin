@@ -31,6 +31,7 @@ Pop up buffer near by import statements
 
 * c-mode
 * c++-mode
+* java-mode
 * perl-mode, cperl-mode
 * ruby-mode
 * python-mode
@@ -38,7 +39,7 @@ Pop up buffer near by import statements
 * js-mode, js2-mode, javascript-mode
 * coffee-mode
 * go-mode
-
+* haskell-mode
 
 ## Add own configuration
 
