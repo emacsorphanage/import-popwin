@@ -33,7 +33,7 @@ Pop up buffer near by import statements
 * c++-mode
 * java-mode
 * perl-mode, cperl-mode
-* ruby-mode
+* ruby-mode, enh-ruby-mode
 * python-mode
 * emacs-lisp-mode
 * js-mode, js2-mode, javascript-mode
