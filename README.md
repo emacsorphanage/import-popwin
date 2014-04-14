@@ -67,7 +67,7 @@ Specified mode for this configuration.
 
 Regexp for searching import statement.
 
-Optional Parameter
+### Optional Parameter
 
 #### `:before`
 
