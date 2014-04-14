@@ -137,7 +137,7 @@
 (import-popwin:add :mode '(cperl-mode perl-mode)
                    :regexp "^\\s-*use\\s-*[^;]+;")
 
-(import-popwin:add :mode 'ruby-mode
+(import-popwin:add :mode '(ruby-mode enh-ruby-mode)
                    :regexp "^require\\s-")
 
 (import-popwin:add :mode 'python-mode
