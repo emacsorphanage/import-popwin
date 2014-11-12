@@ -1,4 +1,4 @@
-# import-popwin.el
+# import-popwin.el [![melpa badge][melpa-badge]][melpa-link] [![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
 
 ## Introduction
 `import-popwin.el` pops up buffer near by import statements with [popwin.el](https://github.com/m2ym/popwin-el).
@@ -93,3 +93,8 @@ This hook is run before each language `:before` functon
 
 Common hooks called after popup window
 This hook is run before each language `:after` functon
+
+[melpa-link]: http://melpa.org/#/import-popwin
+[melpa-stable-link]: http://melpa.org/#/import-popwin
+[melpa-badge]: http://melpa.org/packages/import-popwin-badge.svg
+[melpa-stable-badge]: http://stable.melpa.org/packages/import-popwin-badge.svg
