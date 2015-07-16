@@ -158,6 +158,9 @@
 (import-popwin:add :mode 'haskell-mode
                    :regexp "^import\\s-*")
 
+(import-popwin:add :mode 'scala-mode
+                   :regexp "^import\\s-*")
+
 (provide 'import-popwin)
 
 ;;; import-popwin.el ends here
