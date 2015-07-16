@@ -1,5 +1,9 @@
 Revision history for import-popwin.el
 
+Revision 0.09  2015/07/16 syohex
+  - Support scala-mode
+  Thanks hiddenlotus
+
 Revision 0.08  2014/03/13 syohex
   - Support enh-ruby-mode
   - Fix document
