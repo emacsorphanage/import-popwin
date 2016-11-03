@@ -35,13 +35,11 @@
 
 (defcustom import-popwin:height 0.4
   "height of popwin buffer"
-  :type 'number
-  :group 'import-popwin)
+  :type 'number)
 
 (defcustom import-popwin:position 'bottom
   "position of popwin buffer"
-  :type 'symbol
-  :group 'import-popwin)
+  :type 'symbol)
 
 (defvar import-popwin:info nil)
 
