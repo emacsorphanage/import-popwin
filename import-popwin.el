@@ -1,4 +1,4 @@
-;;; import-popwin.el --- popwin buffer near by import statements with popwin
+;;; import-popwin.el --- popwin buffer near by import statements with popwin -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2016 by Syohei YOSHIDA
 
